@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block style %}
+{% endblock %}
+
+{% block navbar %}
+
+{% endblock %}
+{% block body %}
+<div class="container d-flex h-100">
+    <div class="row w-100">
+        <div class="col-md-6">
+
+            <h2>projects</h2>
+
+            {% for p in projects.projects%}
+
+                <div class="card mb-4">
+                    {% for k,project in p.items()%}
+                        <div class="card-body">
+                            <h5 class="card-title">{{project["name"]}}</h5>
+                            <p class="card-text">{{project["description"]}}</p>
+                            <p><a href="{{project["repo"]}}">Repo</a></p>
+                        </div>
+                    {% endfor %}
+                </div>
+                
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
