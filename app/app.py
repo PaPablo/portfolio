@@ -13,7 +13,14 @@ def add_static_prefix(projects):
     f = lambda x: '/static/images/'+x if x is not None else None
 
     for project in projects['projects']:
-        project["project"]["thumbnail"] = f(project["project"]["thumbnail"])
+
+        if project["project"]["images"] is None:
+            continue
+
+        project["project"]["images"] = list(map(f,project["project"]["images"]))
+
+    print(projects)
+    return projects
 
 @app.route('/')
 def index():
