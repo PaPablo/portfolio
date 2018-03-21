@@ -7,6 +7,14 @@ app.config.from_object('app.local_settings')
 
 manager = Manager(app)
 
+
+def add_static_prefix(projects):
+
+    f = lambda x: '/static/images/'+x if x is not None else None
+
+    for project in projects['projects']:
+        project["project"]["thumbnail"] = f(project["project"]["thumbnail"])
+
 @app.route('/')
 def index():
     import yaml
@@ -16,6 +24,8 @@ def index():
             projects = yaml.load(stream)
         except yaml.YAMLError as exc:
             print(exc)
+
+    add_static_prefix(projects)
 
     return render_template('index.html',projects=projects)
 
