@@ -37,5 +37,9 @@ def index():
     projects = get_yaml('app/projects.yml')
     add_static_prefix(projects)
 
-    return render_template('index.html',projects=projects)
+    techs = get_yaml('app/techs.yml')
+
+    print(techs)
+
+    return render_template('index.html',projects=projects, techs=techs)
 
