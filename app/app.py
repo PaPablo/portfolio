@@ -19,19 +19,22 @@ def add_static_prefix(projects):
 
         project["project"]["images"] = list(map(f,project["project"]["images"]))
 
-    print(projects)
     return projects
 
-@app.route('/')
-def index():
+def get_yaml(path):
     import yaml
 
-    with open("app/projects.yml", 'r') as stream:
+    with open(path, 'r') as stream:
         try:
-            projects = yaml.load(stream)
+            data = yaml.load(stream)
         except yaml.YAMLError as exc:
             print(exc)
 
+    return data
+
+@app.route('/')
+def index():
+    projects = get_yaml('app/projects.yml')
     add_static_prefix(projects)
 
     return render_template('index.html',projects=projects)
