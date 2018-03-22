@@ -1,3 +1,12 @@
 body {
     padding:4em
 }
+.tech-logo {
+    margin:0 .2em 0 .2em;
+    width: 3em; 
+    height:3em
+}
+
+.tech-side {
+    border-left: .1em solid black;
+}

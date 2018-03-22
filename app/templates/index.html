@@ -35,9 +35,18 @@
                 </div>
                 {% endif %}
                 <div class="card-body">
-                    <h5 class="card-title">{{project["name"]}}</h5>
-                    <p class="card-text">{{project["description"]}}</p>
-                    <p><a href="{{project["repo"]}}">Repo</a></p>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h5 class="card-title">{{project["name"]}}</h5>
+                            <p class="card-text">{{project["description"]}}</p>
+                            <p><a href="{{project["repo"]}}">Repo</a></p>
+                        </div>
+                        <div class="tech-side col-md-4">
+                            {% for t in project["techs"] %}
+                            <img class="float-right tech-logo" src="{{techs[t]}}">
+                            {% endfor %}
+                        </div>
+                    </div>
                 </div>
                 {% endfor %}
             </div>
