@@ -7,13 +7,13 @@
 {% block body %}
 <div class="container d-flex h-100">
     <div class="row w-100">
-        <div class="col-md-6">
+        <div class="col-md-12">
 
             <h2>projects</h2>
 
             {% for p in projects.projects%}
 
-            <div class="card mb-4">
+            <div class="card mb-4 w-75">
                 {% for k,project in p.items()%}
                 {% if project["images"] %}
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="false">
