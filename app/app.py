@@ -10,7 +10,7 @@ manager = Manager(app)
 
 def add_static_prefix(projects):
 
-    f = lambda x: '/static/images/'+x if x is not None else None
+    f = lambda x: 'static/images/'+x if x is not None else None
 
     for project in projects['projects']:
 
