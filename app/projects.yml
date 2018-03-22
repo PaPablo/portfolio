@@ -4,10 +4,5 @@ projects:
         description: A small tool to setup a TMUX environment
         repo: https://github.com/papablo/tvenv
         images: 
-            - turing.png
-    - project:
-        name: otro
-        description: A small tool to setup a TMUX environment
-        repo: https://github.com/papablo/tvenv
-        images:
-
+        techs:
+            - bash

@@ -20,7 +20,15 @@ projects:
             - image 1
             - image 2
             ...
+        techs:
+            - tech 1
+            ...
 ```
+#### Available Techs so far
+
+* python
+* django
+* bash
 
 3. once it's done. Freeze it with
 
