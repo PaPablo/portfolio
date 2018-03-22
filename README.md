@@ -1,4 +1,4 @@
-# Portofolio Generatos
+# Portofolio Base
 
 Little generator to create my portofolio
 
