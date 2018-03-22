@@ -39,7 +39,5 @@ def index():
 
     techs = get_yaml('app/techs.yml')
 
-    print(techs)
-
     return render_template('index.html',projects=projects, techs=techs)
 
