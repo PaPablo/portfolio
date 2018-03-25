@@ -1,12 +1,25 @@
 body {
     padding:4em
 }
+
+img{
+    object-fit:contain;
+    height:25em
+
+}
+
 .tech-logo {
-    margin:0 .2em 0 .2em;
-    width: 3em; 
+    margin:0 .2em .5em .2em;
     height:3em
 }
 
 .tech-side {
     border-left: .1em solid black;
 }
+
+.img-fluid{
+    max-width: 100%;
+    height: auto; 
+}
+
+/* Set the image to fill its parent and make transparent */
