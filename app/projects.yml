@@ -1,8 +1,9 @@
 projects:
     - project:
-        name: tvenv
-        description: A small tool to setup a TMUX environment
-        repo: https://github.com/papablo/tvenv
+        name: Portfolio Generator
+        description: tool to generate a web portfolio
+        repo:
         images: 
         techs:
-            - bash
+            - python
+            - flask
