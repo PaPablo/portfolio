@@ -8,6 +8,11 @@ app.config.from_object('app.local_settings')
 manager = Manager(app)
 
 
+def add_logos_prefix(logos):
+    f = lambda x: 'static/logos/'+x if x is not None else None
+
+    return {k:f(v) for k,v in logos.items()}
+    
 def add_static_prefix(projects):
 
     f = lambda x: 'static/images/'+x if x is not None else None
@@ -37,7 +42,7 @@ def index():
     projects = get_yaml('app/projects.yml')
     add_static_prefix(projects)
 
-    techs = get_yaml('app/techs.yml')
+    techs = add_logos_prefix(get_yaml('app/techs.yml'))
 
     return render_template('index.html',projects=projects, techs=techs)
 
